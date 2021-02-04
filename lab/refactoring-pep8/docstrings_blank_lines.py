@@ -1,6 +1,9 @@
 # by Kami Bigdely
 # Docstrings and blank lines
 class OnBoardTemperatureSensor:
+    """
+    Get the onboard temperature in celsius
+    """
     VOLTAGE_TO_TEMP_FACTOR = 5.6
     def __init__(self):
         pass
@@ -8,8 +11,12 @@ class OnBoardTemperatureSensor:
         return 2.7
     def get_temperature(self):
         return self.read_voltage() * OnBoardTemperatureSensor.VOLTAGE_TO_TEMP_FACTOR # [celcius]
+
   
 class CarbonMonoxideSensor:
+    """
+    Sensor capable of getting carbon monoxide level and converting voltage to carbon monoxide level.
+    """
     VOLTAGE_TO_CO_FACTOR = 0.048
     def __init__(self, temperature_sensor):
         self.on_board_temp_sensor = temperature_sensor
@@ -24,19 +31,29 @@ class CarbonMonoxideSensor:
         return 2.3
     def convert_voltage_to_carbon_monoxide_level(voltage, temperature):
         return voltage * CarbonMonoxideSensor.VOLTAGE_TO_CO_FACTOR * temperature
+
     
 class DisplayUnit:
+    """
+    Show the units 
+    """
     def __init__(self):
         self.string = ''
     def display(self,msg):
         print(msg)
-class CarbonMonoxideDevice():
+
+
+class CarbonMonoxideDevice:
+    """
+    Show the carbon Monoxide level.
+    """
     def __init__(self, co_sensor, display_unit):
         self.carbonMonoxideSensor = co_sensor 
         self.display_unit = display_unit       
     def Display(self):
         msg = 'Carbon Monoxide Level is : ' +  str(self.carbonMonoxideSensor.get_carbon_monoxide_level())
         self.display_unit.display(msg)
+
 
 if __name__ == "__main__":
     temp_sensor = OnBoardTemperatureSensor()
