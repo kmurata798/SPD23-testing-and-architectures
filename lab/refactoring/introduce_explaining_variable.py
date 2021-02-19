@@ -8,9 +8,10 @@
 import math
 # assuming you have extracted the following info from the profile's image.
 ideal_eye_size = 0.45
-eye_area = 0.69
+ideal_eye_area = 0.69
 eye_height_divided_by_width = 0.59
 
+eye_area = (math.pi*iris_width/2*iris_height/2)
 eye_size = 0.47    # [cm^2]
 eye_width = 24.2   # [mm]
 eye_height = 23.7  # [mm]
@@ -18,7 +19,7 @@ eye_height = 23.7  # [mm]
 iris_width = 20.2  # [mm]
 iris_height = 19.7 # [mm]
 
-if eye_size > ideal_eye_size and (math.pi*iris_width/2*iris_height/2) / eye_size >= eye_area and \
+if eye_size > ideal_eye_size and eye_area / eye_size >= ideal_eye_area and \
         eye_height/eye_width >= eye_height_divided_by_width:
     print("I’m sorry I wasn’t part of your past, can I make it up by being in your future?")
     
