@@ -54,7 +54,7 @@ class School:
         # Find the top 10% of them and send their contact to the top employers
         send_top10_percent(passed_students)
 
-students = [Student(2.1, 'donald'), Student(2.3, 'william'), Student(2.7, 'toro'), 
-            Student(3.9, 'lili'), Student(3.2,'kami'), Student(3,'sarah')]
+students = [Student(2.1, 'Pinocchio'), Student(2.3, 'goku'), Student(2.7, 'toro'), 
+            Student(3.9, 'naruto'), Student(3.2,'kami'), Student(3,'guts')]
 school  = School(students)
 school.process_graduation()
