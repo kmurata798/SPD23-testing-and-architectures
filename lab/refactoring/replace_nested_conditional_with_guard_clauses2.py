@@ -1,6 +1,10 @@
 # Adapted from a Java code in the "Refactoring" book by Martin Fowler.
+<<<<<<< HEAD:lab/refactoring/replace_nested_conditional_with_gaurd_clauses2.py
 # Replace nested conditional with gaurd clases.
 
+=======
+# Replace nested conditional with guard clases.
+>>>>>>> 67a0de20719a1f2b5386fb1cb1ad7ffa716ed466:lab/refactoring/replace_nested_conditional_with_guard_clauses2.py
 ADJ_FACTOR = 0.7
 def get_adjusted_capital(capital, rate, duration, income):
     result = 0

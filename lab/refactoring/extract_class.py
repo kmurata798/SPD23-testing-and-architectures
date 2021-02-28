@@ -1,5 +1,16 @@
 # by Kami Bigdely
 # Extract Class
+class FoodPlate:
+
+    def __init__(self, name, prep_time, is_veggie, food_type, food_origin, ingredients, instructions):
+        self.name = name
+        self.prep_time = prep_time
+        self.is_veggie = is_veggie
+        self.food_type = food_type
+        self.food_origin = food_origin
+        self.ingredients = ingredients
+        self.instructions = instructions
+
 foods = {'butternut squash soup':[45, True, 'soup','North African',\
      ['butter squash','onion','carrot', 'garlic','butter','black pepper', 'cinnamon','coconut milk']\
         ,'1. Grill the butter squash, onion, carrot and garlic in the oven until'
@@ -15,8 +26,10 @@ foods = {'butternut squash soup':[45, True, 'soup','North African',\
                 'the seasonings 2. In a bowl, mix ground beef with the'
                 'seasoning 3. Add all the content to a sausage stuffer. Put the casing on'
                 "the stuffer funnel. Rotate the stuffer's handle (or turn it on) to make your yummy sausages!"]}
-
+foodList = []
+# loop through list of foodplates and create foodPlate objects out of them
 for key, value in foods.items():
+    foodList.append(FoodPlate(key, value[0], value[1], value[2], value[3], value[4], value[5]))
     print("Name:",key)
     print("Prep time:",value[0], "mins")
     print("Is Veggie?", 'Yes' if value[1] else "No")
@@ -27,6 +40,17 @@ for key, value in foods.items():
     print()
     print("recipe", value[5])
     print("***")
-
+# loop through the list of objects and print each of the class properties
+for plate in foodList:
+    print("Name:",plate.name)
+    print("Prep time:",plate.prep_time, "mins")
+    print("Is Veggie?", 'Yes' if plate.is_veggie else "No")
+    print("Food Type:", plate.food_type)
+    print("Cuisine:", plate.food_origin)
+    for item in plate.ingredients:
+        print(item, end=', ')
+    print()
+    print("recipe", plate.instructions)
+    print("***")
 
 
